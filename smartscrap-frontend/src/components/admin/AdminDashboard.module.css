@@ -1,0 +1,245 @@
+.adminContainer {
+    display: flex;
+    min-height: calc(100vh - 75px);
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--dark-charcoal);
+    color: var(--white);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #555;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar nav button {
+    background: none;
+    border: none;
+    color: #ccc;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar nav button:hover,
+.sidebar nav button.active {
+    background-color: #4a4a4a;
+    color: var(--white);
+}
+
+.mainContent {
+    flex: 1;
+    padding: 2rem;
+    background-color: var(--light-gray);
+}
+
+/* Stats Cards */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.statCard {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cardIcon {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-right: 1.5rem;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.cardValue {
+    color: var(--dark-charcoal);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Table Styles */
+.tableContainer {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.tableContainer h2 {
+    margin-bottom: 1.5rem;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+th {
+    background-color: var(--light-gray);
+    font-weight: 700;
+}
+
+/* Status Badge inside table */
+.statusBadge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+}
+.statusBadge.pending { background-color: #f39c12; }
+.statusBadge.scheduled { background-color: #3498db; }
+.statusBadge.completed { background-color: var(--primary-green); }
+.statusBadge.cancelled { background-color: var(--danger-red); }
+
+.statusSelect {
+    padding: 0.4rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+.sidebar nav button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* User Role styles for the Manage Users table */
+.adminRole, .userRole {
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.adminRole {
+    background-color: var(--accent-coral);
+}
+
+.userRole {
+    background-color: #3498db;
+}
+
+/* Add loading style if it's missing */
+.loading {
+    text-align: center;
+    padding: 4rem;
+    font-size: 1.5rem;
+}
+/* --- ADD THIS CODE TO THE END OF YOUR CSS FILE --- */
+
+.editButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.editButton:hover {
+    background-color: #2980b9;
+}
+
+/* Modal Styles */
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modalContent {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modalContent h3 {
+    margin-top: 0;
+}
+
+.inputGroup {
+    margin-bottom: 1rem;
+}
+
+.inputGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.inputGroup select,
+.inputGroup input,
+.inputGroup textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.modalActions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.modalActions button {
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.updateButton {
+    background-color: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
